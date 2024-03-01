@@ -1,0 +1,91 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(29, 29, 31)
+    
+}
+
+/*background for border animation*/
+.back {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 60px;
+    background: rgb(83, 83, 142);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+/* Text in the center of the background */
+.back h2 {
+    z-index: 3;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.animated {
+    display: block;
+    color: white; 
+    position: relative;
+    height: 3rem; 
+    line-height: 3rem; 
+    font-weight: bold;
+}
+
+/* animated text */
+.animated::after {
+    content: 'Discover more of our work';
+    display: block;
+    opacity: 1;
+}
+
+/* border animation*/
+.back::before {
+    position: absolute;
+    content: '';
+    width: 150%;
+    height: 150%;
+    background: conic-gradient( white 40deg, #f6b73c 70deg, #4d9f0c 60deg, transparent 100deg);
+    animation: animate 1.4s linear infinite;
+    opacity: 0; 
+}
+
+/* make border animation only visible on hover */
+.back:hover::before {
+    opacity: 1;
+}
+
+/* rotate background */
+@keyframes animate{
+    0%{
+        transform:rotate(360deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+        
+    }
+}
+
+/* island inside the background */
+.back::after {
+    position: absolute;
+    content:'';
+    background:rgb(29, 29, 31);
+    border-radius: 9999px;
+    inset: 2px;
+}
+
+
