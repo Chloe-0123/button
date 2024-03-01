@@ -9,7 +9,7 @@ function App() {
     
     animate([
       [".animated", {y:-45}, { duration: 0.4}],
-      [".animated", {y: 0}, {duration: 0.0001 }]
+      [".animated", {y: 0}, {duration: 0.0001}]
     ])
   }
   return (
